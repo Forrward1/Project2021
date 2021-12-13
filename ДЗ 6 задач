@@ -2,7 +2,8 @@
 a = int(input())
 def sqr(a):
     n =  a**2
-    return print(str(n))
+    return print(str(n) + '- квадрат этого числа')
+print(str(a) + '- введённое число')
 sqr(a)
 
 #Задача 2
