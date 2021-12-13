@@ -1,0 +1,133 @@
+# №1
+a, b, c = input().split()
+def maxi(a, b, c):
+    if a > b and a > c:
+        x = a
+    elif c > a and c > b:
+        x = c
+    else: x = b
+    print(x)
+maxi(a, b, c)
+
+# №2
+a = list(map(int,input().split(',')))
+def summa(a):
+    b = 0
+    for i in range(len(a)):
+        b = b + a[i]
+    print(b)
+summa(a)
+
+# №3
+a = list(map(int,input().split(',')))
+def ymn(a):
+    b = 1
+    for i in range(len(a)):
+        b = b * a[i]
+    print(b)
+ymn(a)
+
+# №4
+a = str(input())
+def obrstrok(a):
+    b = list(a)
+    for i in range(len(a)//2):
+        c = b[i]
+        b[i] = b[len(a)-i-1]
+        b[len(a)-i-1] = c
+    print(''.join(b))
+obrstrok(a)
+
+# №5
+a = int(input())
+def factorial(a):
+    b = 1
+    for i in range(1, a + 1):
+        b = b * i
+    print(b)
+factorial(a)
+
+# №6
+a = int(input("Число "))
+b,c = list(map(int,input("Диапозон от  до  ").split()))
+def diapozon(a,b,c):
+    if c > a and a > b:
+        print("Да")
+    else: print("Нет")
+diapozon(a, b, c)
+
+# №7
+a = input("Введите слова ")
+def f(a):
+    mal = 0
+    bol = 0
+    space = 0
+    for i in range(len(a)):
+        if a[i] == a[i].lower() and a[i] != ' ':
+            mal = mal + 1
+        elif a[i] == a[i].upper() and a[i] != ' ': bol = bol + 1
+        else: space = space + 1
+    print("Количество символов в верхнем регистре: " + str(bol) + ", количество строчных букв: " + str(mal))
+f(a)
+
+# №8
+a = list(map(int,input().split(',')))
+def f(a):
+    b =[]
+    for i in a:
+        if i in b:
+            continue
+        else:
+            b.append(i)
+    print(b)
+f(a)
+
+# №9
+#Простое число - это натуральное число, большее 1, которое не имеет положительных делителей, кроме 1 и самого себя.
+a = int(input())
+def ez(a):
+    c = 0
+    if a == 2:
+        print(str(a) + " - число непростое")
+    else:
+        for i in range(2, a - 1):
+            if a % i == 0:
+                c += 1
+            if c > 0:
+                print(str(a) + " - число непростое")
+                break
+        if c == 0:
+            print(str(a) + " - число простое")
+ez(a)
+
+# №10
+
+
+# №11
+
+
+# №12
+
+
+# №13
+
+
+# №14
+
+
+# №15
+
+
+# №16
+
+
+# №17
+
+
+# №18
+
+
+# №19
+
+
+# №20
