@@ -101,33 +101,144 @@ def ez(a):
 ez(a)
 
 # №10
-
+a = list(map(int,input().split(",")))
+b = []
+for i in range(len(a)):
+    if a[i] % 2 == 0:
+        b.append(a[i])
+print(b)
 
 # №11
-
+a = int(input())
+def f(a):
+    c = 0
+    for i in range(1,a):
+        if a % i == 0:
+            c = c + i
+    if a == c:
+        print("Совершенное")
+    else: 
+        print("Несовершенное")
+f(a)
 
 # №12
-
+#Палиндром - это слово, фраза или последовательность, которые читаются так же, как и вперёд, например, бегут мадам или медсестры.
+a = input()
+def reverse(a): 
+    return a[::-1] 
+def f(a): 
+    rev = reverse(a) 
+    if (a == rev): 
+        print("Да - палиндром")
+    else: print('Нет - не палиндром')
+f(a)
 
 # №13
-
+a = int(input())
+def f(rows):
+    row = [1]
+    for i in range(rows):
+        print(row)
+        row = [sum(x) for x in zip([0]+row, row+[0])]
+f(a)
 
 # №14
-
+#Панограммы - это слова или предложения, содержащие каждую букву алфавита хотя бы один раз.
+a = input()
+b = ['а','б','в','г','д','е','ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у','ф','х','ц','ч','ш','щ','ъ','ы','ь','э','ю','я']
+def f(a):
+    a = a.lower().replace(' ', '')
+    a = a.replace('', ',')
+    c = set(b) - set(a)
+    if len(c) > 0:
+        print("Нет - не панограммы")
+    else: print("Да - панограммы")
+f(a)
 
 # №15
-
+a = input()
+def f(a):
+    c = ''
+    a = a.split('-')
+    b = sorted(a)
+    for i in range(len(b)):
+        if i == len(b)-1:
+            c = c + b[i]
+        else: c = c + b[i] + '-'
+    print(c)
+f(a)
 
 # №16
-
+def f():
+    b = []
+    for i in range(1,31):
+        b.append(i**2)
+    print(b)
+f()
 
 # №17
-
+def make_bold(fn):
+    def wrapped():
+        return "<b>" + fn() + "</b>"
+    return wrapped
+def make_italic(fn):
+    def wrapped():
+        return "<i>" + fn() + "</i>"
+    return wrapped
+def make_underline(fn):
+    def wrapped():
+        return "<u>" + fn() + "</u>"
+    return wrapped
+@make_bold
+@make_italic
+@make_underline
+def f():
+    return "informatika"
+print(f())
 
 # №18
+import sys
+import io
 
+codeOut = io.StringIO()
+codeErr = io.StringIO()
+
+code = "print 'This is my output.'"
+
+sys.stdout = codeOut
+sys.stderr = codeErr
+
+exec(code)
+
+sys.stdout = sys.__stdout__
+sys.stderr = sys.__stderr__
+
+print (f(4))
+
+s = codeErr.getvalue()
+
+print ("error:\n%s\n" % s)
+
+s = codeOut.getvalue()
+
+print ("output:\n%s" % s)
+
+codeOut.close()
+codeErr.close()
 
 # №19
-
+def test(a):
+        def add(b):
+                nonlocal a
+                a += 1
+                return a+b
+        return add
+func= test(4)
+print(func(4))
 
 # №20
+def fun():
+    a = 1
+    str = 'Привет'
+    b = 3
+print(fun.__code__.co_nlocals)
